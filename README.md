@@ -1,3 +1,19 @@
+vins-mono中用到的鱼眼相机标定方法
+下载好源码后编译。要求x86结构，cmake 3.* 
+
+只进行鱼眼相机标定并不要求安装cuda
+mkdir build
+
+cd build
+
+cmake -DCMAKE_BUILD_TYPE=Release ..
+
+make
+如果编译成功，在bin下面会生成四个模型，主要是用intrinsic_calib 执行文件。相应的配置参数可以在src/examples/intrinsic_calib.cc文件里面找到对应。生成的结果在build目录下 camera_camera_calib.yaml文件中
+bin/intrinsic_calib -i ../data/images/ -p img --camera-model mei
+-----------------------------------------------------------------------------------------------------------------------------
+
+
 CamOdoCal
 =========
  
